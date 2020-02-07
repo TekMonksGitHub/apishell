@@ -1,4 +1,4 @@
-# monkshu
+# APIShell
 The APISHell Project
 
 APIShell - Secure API for executing remote shell commands, includes authentication 
