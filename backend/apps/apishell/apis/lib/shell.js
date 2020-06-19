@@ -12,10 +12,10 @@ exports.runShell = command => {
 
         let stdOut = ""; let stdErr = "";
 
-        shellProcess.stdout.on("data", data => {stdOut += String.fromCharCode.apply(null, data);});
+        shellProcess.stdout.on("data", data => { stdOut += String.fromCharCode.apply(null, data); });
 
-        shellProcess.stderr.on("data", data => {stdErr += String.fromCharCode.apply(null, data);});
+        shellProcess.stderr.on("data", data => { stdErr += String.fromCharCode.apply(null, data); });
 
-        shellProcess.on("exit", exitCode => {if (exitCode) reject({stdOut, stdErr}); else resolve({stdOut, stdErr});});
+        shellProcess.on("exit", exitCode => resolve({ exitCode, stdOut, stdErr }));
     });
 }
