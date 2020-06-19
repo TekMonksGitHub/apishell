@@ -16,6 +16,6 @@ exports.runShell = command => {
 
         shellProcess.stderr.on("data", data => { stdErr += String.fromCharCode.apply(null, data); });
 
-        shellProcess.on("exit", exitCode => (exitCode) ? reject({ exitCode, stdOut, stdErr }) : resolve({ exitCode, stdOut, stdErr }));
+        shellProcess.on("exit", exitCode => resolve({ exitCode, stdOut, stdErr }));
     });
 }
